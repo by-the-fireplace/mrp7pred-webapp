@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Mrp7Pred: An online server for discovering MRP7 modulators</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/jquery.mCustomScrollbar.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/animate.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/media-queries.css')}}"
+    />
+
+    <!-- Favicon and touch icons -->
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='ico/logo-m7p-nobg-icon.png')}}"
+    />
+    <link
+      rel="logo-m7p-nobg"
+      sizes="144x144"
+      href="{{url_for('static', filename='ico/logo-m7p-nobg-144.png')}}"
+    />
+    <link
+      rel="logo-m7p-nobg"
+      sizes="114x114"
+      href="{{url_for('static', filename='ico/logo-m7p-nobg-114.png')}}"
+    />
+    <link
+      rel="logo-m7p-nobg"
+      sizes="72x72"
+      href="{{url_for('static', filename='ico/logo-m7p-nobg-72.png')}}"
+    />
+    <link
+      rel="logo-m7p-nobg"
+      href="{{url_for('static', filename='ico/logo-m7p-nobg-57.png')}}"
+    />
+    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <!-- close sidebar menu -->
+        <div class="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="logo">
+          <img src="{{url_for('static', filename='img/logo-m7p-nobg.png')}}" />
+        </div>
+
+        <ul class="list-unstyled menu-elements">
+          <li class="active">
+            <a class="scroll-link" href="#top-content"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-1"
+              ><i class="fas fa-book-open"></i> About MRP7</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-2"
+              ><i class="fas fa-question-circle"></i> Instructions</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-3"
+              ><i class="fas fa-list-alt"></i> Examples</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-4"
+              ><i class="fas fa-play"></i> Prediction</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-5"
+              ><i class="fas fa-pencil-alt"></i> Cite us</a
+            >
+          </li>
+          <li>
+            <a class="scroll-link" href="#section-6"
+              ><i class="fas fa-envelope"></i> Contact us</a
+            >
+          </li>
+          <!-- </ul> -->
+          <!-- </li> -->
+        </ul>
+
+        <div class="to-top">
+          <a class="btn btn-primary btn-customized-3" href="#" role="button">
+            <i class="fas fa-arrow-up"></i> Top
+          </a>
+        </div>
+      </nav>
+      <!-- End sidebar -->
+
+      <!-- Dark overlay -->
+      <div class="overlay"></div>
+
+      <!-- Content -->
+      <div class="content">
+        <!-- open sidebar menu -->
+        <a
+          class="btn btn-primary btn-customized open-menu"
+          href="#"
+          role="button"
+        >
+          <i class="fas fa-align-left"></i> <span>Menu</span>
+        </a>
+
+        <!-- Top content -->
+        <div class="top-content section-container" id="top-content">
+          <div class="container">
+            <div class="row">
+              <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <h1 class="wow fadeIn">Mrp7<strong>Pred</strong></h1>
+                <div class="description wow fadeInLeft">
+                  <p>
+                    Mrp7Pred is an online server for discovering novel MRP7
+                    modulators. For more details, please check our
+                    <a href="http://mrp7pred.com"
+                      ><strong>PUBLICATION</strong></a
+                    >.
+                  </p>
+                </div>
+                <div class="buttons wow fadeInUp">
+                  <a
+                    class="btn btn-primary btn-customized scroll-link"
+                    href="#section-4"
+                    role="button"
+                  >
+                    <i class="fas fa-play"></i> Start
+                  </a>
+                  <a
+                    class="btn btn-primary btn-customized-2 scroll-link"
+                    href="#section-2"
+                    role="button"
+                  >
+                    <i class="fas fa-question-circle"></i> Help
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div
+          class="section-1-container section-container section-container-gray-bg"
+          id="section-1"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col section-1 section-description wow fadeIn"></div>
+            </div>
+            <div class="row">
+              <div class="col-4 section-1-box wow fadeInLeft">
+                <h3>What is MRP7</h3>
+                <p class="medium-paragraph">
+                  <li>
+                    MRP7, or ABCC10, is the 10th member of ABCC subfamily,
+                    responsible for the transportation of various endo- and
+                    xeno-biotics across the cytoplasm membrane.
+                  </li>
+                  <li>
+                    MRP7 substrates include Leukotriene C<sub>4</sub>,
+                    E<sub>2</sub>17&#946;G, paclitaxel, <i>Vinca</i> alkaloids,
+                    gemcitabine, docetaxel, epothilone B
+                  </li>
+                </p>
+              </div>
+              <div class="col-8 section-1-box wow fadeInUp">
+                <img
+                  src="{{url_for('static', filename='img/mrp7.jpg')}}"
+                  alt="about-us"
+                />
+                <p>
+                  Left: Predicted topological structure of MRP7. Right: An MRP7
+                  homology model built in our lab. TMD: transmembrane domain;
+                  NBD: nucleotide-binding domain; Lasso: lasso motif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-2-container section-container" id="section-2">
+          <div class="container">
+            <div class="row">
+              <div class="col section-2 section-description wow fadeIn">
+                <h2>Instructions</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 section-2-box wow fadeInUp">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="section-2-box-icon">
+                      <i class="fas fa-magic"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>Data Preparation</h3>
+                    <p>
+                      Mrp7Pred takes SMILES as inputs. The users should prepare
+                      their list of compounds in a csv format which has two
+                      columns "name" and "smiles". For sample data see
+                      <a class="scroll-link" href="#section-3">examples</a>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 section-2-box wow fadeInDown">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="section-2-box-icon">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>Making Predictions</h3>
+                    <p>
+                      Automatic featurization and prediction. Featurization
+                      might fail if your SMILES string contains disconnected
+                      structures. Results will be displayed once the prediction
+                      is done.
+                    </p>
+                    <p>
+                      <i>* Execution time varies by structural complexity</i>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 section-2-box wow fadeInUp">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="section-2-box-icon">
+                      <i class="fas fa-poll"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>Getting Results</h3>
+                    <p>
+                      Results in table format will be generated automatically
+                      with scores. Compounds with score > 0.5 is considered an
+                      MRP7 modulator.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-3-container section-container" id="section-3">
+          <div class="container">
+            <div class="row">
+              <div class="col section-3 section-description wow fadeIn">
+                <h2>Examples</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 section-3-box wow fadeInLeft">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="section-3-box-icon">
+                      <i class="fas fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <h3>Modulators</h3>
+                    <p>
+                      <a href="/positive" download>Download</a>
+                      MRP7 modulators.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 section-3-box wow fadeInLeft">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="section-3-box-icon">
+                      <i class="fas fa-minus"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <h3>Non-Modulators</h3>
+                    <p>
+                      <a href="/negative" download>Download</a>
+                      MRP7 non-modulators.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+
+        <div
+          class="section-4-container section-container section-container-image-bg"
+          id="section-4"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col section-4 section-description wow fadeInLeftBig">
+                <h2>Start Prediction</h2>
+                <p>
+                  Please follow the
+                  <a class="scroll-link" href="#section-2">instructions</a> for
+                  data preparation.
+                </p>
+                <p>
+                  Click <strong>Choose File</strong> to select your prepared
+                  data and click <strong>Upload</strong>.
+                </p>
+                <p>Then click <strong>Run</strong> to start prediction.</p>
+              </div>
+            </div>
+            <div id="wrapper" style="display: none">
+              <div class="row py-5">
+                <div class="col-lg-10 mx-auto">
+                  <div class="card rounded shadow border-0">
+                    <div class="card-body p-5 bg-white rounded">
+                      <div class="logo">
+                        <img
+                          src="{{url_for('static', filename='img/logo-m7p-nobg.png')}}"
+                        />
+                      </div>
+                      <div style="padding: 50px">
+                        <div class="gooey">
+                          <span class="dot"></span>
+                          <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h2 style="color: #555">
+                          Running prediction for your data
+                        </h2>
+                        <p style="color: #555">Do not leave the page</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col section-bottom-button wow fadeInUp">
+                <form
+                  id="csv_form"
+                  action="/run"
+                  method="POST"
+                  style="width: 30%; margin-left: 35%; border-radius: 6px"
+                  enctype="multipart/form-data"
+                  class="csv_form"
+                >
+                  <p>
+                    <input
+                      id="csv_file"
+                      type="file"
+                      name="csv_file"
+                      accept=".csv"
+                      required
+                    />
+                  </p>
+                </form>
+
+                <button
+                  class="btn btn-primary btn-customized"
+                  type="submit"
+                  form="csv_form"
+                  id="submit_button"
+                >
+                  <script>
+                    $(document).on("submit", "form.csv_form", function () {
+                      $("#wrapper").show();
+                    });
+                    $(document).on("submit", "form.csv_form", function () {
+                      $("#submit_button").hide();
+                    });
+                    $(document).on("submit", "form.csv_form", function () {
+                      $("#csv_file").hide();
+                    });
+                    $(document).on("submit", "form.csv_form", function () {
+                      $("#section-6").hide();
+                    });
+                  </script>
+                  <i class="fas fa-running"></i>
+                  &nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-5-container section-container" id="section-5">
+          <div class="container">
+            <div class="row">
+              <div class="col section-5 section-description wow fadeIn">
+                <h2>Cite Us</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+                <p>
+                  Mrp7Pred: An online server for discovering MRP7 modulators.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section-6-container section-container" id="section-6">
+          <div class="container">
+            <div class="row">
+              <div class="col section-6 section-description wow fadeIn">
+                <h2>Contact Us</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+                <p>
+                  <i class="fas fa-envelope"></i> Email:
+                  <a href="mailto:info@mrp7pred.com">info@mrp7pred.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                &copy; 2021, Department of Pharmacology, College of Pharmacy and
+                Health Sciences, St. John's University. All rights reserved. For
+                non-commercial use only.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- End content -->
+    </div>
+    <!-- End wrapper -->
+
+    <!-- Javascript -->
+    <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery-migrate-3.0.0.min.js')}}"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{url_for('static', filename='js/jquery.backstretch.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/wow.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+    <script>
+      $(document).ready(function () {
+        $("#upload_csv_file").click(function () {
+          var csv_file = $("#csv_file").val();
+          $.ajax({
+            url: "/",
+            type: "get",
+            data: { csv_file: csv_file },
+            success: function (response) {
+              $("#output").html(response.html);
+            },
+            error: function (xhr) {
+              //Do Something to handle error
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

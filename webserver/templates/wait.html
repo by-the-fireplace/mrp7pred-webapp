@@ -1,0 +1,140 @@
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  <title>Mrp7Pred: An online server for discovering MRP7 modulators</title>
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/jquery.mCustomScrollbar.min.css')}}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/animate.css')}}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/style.css')}}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/media-queries.css')}}"
+  />
+
+  <link
+    rel="shortcut icon"
+    href="{{url_for('static', filename='ico/logo-m7p-nobg-icon.png')}}"
+  />
+  <link
+    rel="logo-m7p-nobg"
+    sizes="144x144"
+    href="{{url_for('static', filename='ico/logo-m7p-nobg-144.png')}}"
+  />
+  <link
+    rel="logo-m7p-nobg"
+    sizes="114x114"
+    href="{{url_for('static', filename='ico/logo-m7p-nobg-114.png')}}"
+  />
+  <link
+    rel="logo-m7p-nobg"
+    sizes="72x72"
+    href="{{url_for('static', filename='ico/logo-m7p-nobg-72.png')}}"
+  />
+  <link
+    rel="logo-m7p-nobg"
+    href="{{url_for('static', filename='ico/logo-m7p-nobg-57.png')}}"
+  />
+  <style></style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    // $.getJSON({
+    //   url: "/run",
+    //   data: { out_path: data_path },
+    //   success: function (data) {
+    //     $("#out_path").html(data.out_path);
+    //   },
+    // });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/result",
+    //   data: { out_path: out_path },
+    //   success: function () {
+    //     window.location.replace("/result");
+    //   },
+    // });
+  </script>
+</head>
+<body>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <div class="logo">
+    <img src="{{url_for('static', filename='img/logo-m7p-nobg.png')}}" />
+  </div>
+
+  <div class="gooey">
+    <span class="dot"></span>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <div id="running">
+    <h2>Running prediction for your data</h2>
+    <span>Do not leave the page</span>
+  </div>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+</body>
+
+<style>
+  #copyright {
+    position: absolute;
+    bottom: 0;
+    width: 1100px;
+    height: 50px;
+    margin: -25px 0 0 -550px;
+    left: 50%;
+  }
+
+  #running {
+    padding: 10px;
+  }
+</style>
+<div id="copyright">
+  &copy; 2021, Department of Pharmacology, College of Pharmacy and Health
+  Sciences, St. John's University. All rights reserved. For non-commercial use
+  only.
+</div>
