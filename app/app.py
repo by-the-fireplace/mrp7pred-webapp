@@ -33,7 +33,7 @@ current_data = ""
 # @app.route("/home", methods=["GET", "POST"])
 @app.route("/", methods=["GET", "POST"])
 def home():
-    return render_template("base.html")
+    return render_template("index.html")
 
 
 def run_pred(df, *clf_dir):
