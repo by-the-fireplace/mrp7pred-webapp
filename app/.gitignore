@@ -2,4 +2,6 @@
 /data
 /dist
 *cache*
+.vscode.
+./mypy_cache
 .vscode
