@@ -84,8 +84,8 @@ def run():
         #     pickle.dump(df, f)
         # jsonify({"out_path": out_path})
         try:
-            clf_modulator_dir = "./man_modulator_115_best_model_20210311-233712.pkl"
-            clf_substrate_dir = "./nsc_substrate_mix_103_best_model_20210306-190110.pkl"
+            clf_modulator_dir = "./model/man_modulator_115_best_model_20210311-233712.pkl"
+            clf_substrate_dir = "./model/nsc_substrate_mix_103_best_model_20210306-190110.pkl"
             report_d_l = run_pred(df, clf_modulator_dir, clf_substrate_dir)
 
             return render_template("result.html", items=report_d_l, filename=filename)
