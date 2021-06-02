@@ -1,7 +1,4 @@
-import os
-import sys
-
-from app import app as application
+from mrp7pred_webapp import app
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
