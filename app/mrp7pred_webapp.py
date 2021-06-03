@@ -15,6 +15,7 @@ from werkzeug.utils import secure_filename
 import os
 import time
 import sys
+import re
 from webserver_utils import (
     UPLOAD_FOLDER,
     ensure_folder,
@@ -24,6 +25,7 @@ from webserver_utils import (
 )
 import pandas as pd
 import pickle
+import glob
 from mrp7pred.mrp7pred import MRP7Pred
 
 
@@ -95,7 +97,16 @@ def run():
             report_d_l = run_pred(df, clf_modulator_dir, clf_substrate_dir)
 
             result = render_template("result.html", items=report_d_l, filename=filename)
-            pdf = pdfkit.from_string(result, "./report.pdf")
+            html = re.sub(
+                '.+<a href\="\/download" role="button".+\n.+\n.+a>', " ", result
+            )
+            with open("./report.html", "w") as fi:
+                fi.write(html)
+            css = glob.glob("./static/css/*.css")
+            options = {"enable-local-file-access": None}
+            pdf = pdfkit.from_file(
+                "./report.html", "./report.pdf", css=css, options=options
+            )
             return result
         except SyntaxError as e:
             return render_template("error.html", log=e, filename=filename)
@@ -137,5 +148,5 @@ def negative():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
-    # app.run(debug=True)
+    # app.run(host="0.0.0.0")
+    app.run(debug=True)
