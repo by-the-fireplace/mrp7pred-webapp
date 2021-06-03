@@ -95,8 +95,7 @@ def run():
             report_d_l = run_pred(df, clf_modulator_dir, clf_substrate_dir)
 
             result = render_template("result.html", items=report_d_l, filename=filename)
-            with open("./report.html", "w") as f:
-                f.write(result)
+            pdf = pdfkit.from_string(result, "./report.pdf")
             return result
         except SyntaxError as e:
             return render_template("error.html", log=e, filename=filename)
@@ -109,11 +108,9 @@ def download():
     """
     Convert html to pdf and download
     """
-    with open("./report.html", "r") as html:
-        pdf = pdfkit.from_string(html.read(), False)
-    response = make_response(pdf)
-    response.headers["Content-Type"] = "application/pdf"
-    response.headers["Content-Disposition"] = "inline; filename=report.pdf"
+    with open("./report.pdf", "rb") as f:
+        response = make_response(f.read())
+    response.headers["Content-Disposition"] = "attachment; filename=report.pdf"
     return response
 
 
