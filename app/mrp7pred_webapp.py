@@ -1,4 +1,5 @@
 from flask_bootstrap import Bootstrap
+import pdfkit
 from flask import (
     Flask,
     render_template,
@@ -8,6 +9,7 @@ from flask import (
     redirect,
     flash,
     jsonify,
+    make_response,
 )
 from werkzeug.utils import secure_filename
 import os
@@ -70,9 +72,9 @@ def run():
         ensure_folder(UPLOAD_FOLDER)
         ts = get_current_time()
         rs = random_string(10)
-        random_folder = f"{ts}_{rs}"
-        ensure_folder(f"{UPLOAD_FOLDER}/{random_folder}")
-        app.config["UPLOAD_FOLDER"] = f"{UPLOAD_FOLDER}/{random_folder}"
+        # random_folder = f"{ts}_{rs}"
+        # ensure_folder(f"{UPLOAD_FOLDER}/{random_folder}")
+        # app.config["UPLOAD_FOLDER"] = f"{UPLOAD_FOLDER}/{random_folder}"
         file = request.files["csv_file"]
         # filename = secure_filename(file.filename)
         filename = file.filename
@@ -84,15 +86,35 @@ def run():
         #     pickle.dump(df, f)
         # jsonify({"out_path": out_path})
         try:
-            clf_modulator_dir = "./model/man_modulator_115_best_model_20210311-233712.pkl"
-            clf_substrate_dir = "./model/nsc_substrate_mix_103_best_model_20210306-190110.pkl"
+            clf_modulator_dir = (
+                "./model/man_modulator_115_best_model_20210311-233712.pkl"
+            )
+            clf_substrate_dir = (
+                "./model/nsc_substrate_mix_103_best_model_20210306-190110.pkl"
+            )
             report_d_l = run_pred(df, clf_modulator_dir, clf_substrate_dir)
 
-            return render_template("result.html", items=report_d_l, filename=filename)
-        except Exception as e:
+            result = render_template("result.html", items=report_d_l, filename=filename)
+            with open("./report.html", "w") as f:
+                f.write(result)
+            return result
+        except SyntaxError as e:
             return render_template("error.html", log=e, filename=filename)
     if request.method == "GET":
         return redirect(url_for("wait"))
+
+
+@app.route("/download", methods=["GET", "POST"])
+def download():
+    """
+    Convert html to pdf and download
+    """
+    with open("./report.html", "r") as html:
+        pdf = pdfkit.from_string(html.read(), False)
+    response = make_response(pdf)
+    response.headers["Content-Type"] = "application/pdf"
+    response.headers["Content-Disposition"] = "inline; filename=report.pdf"
+    return response
 
 
 @app.route("/positive", methods=["GET", "POST"])
@@ -118,4 +140,5 @@ def negative():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    # app.run(host="0.0.0.0")
+    app.run(debug=True)

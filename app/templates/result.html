@@ -109,7 +109,7 @@
                     <tr>
                       <td>{{item.name}}</td>
                       <td>{{item.svg | safe}}</td>
-                      <td style="max-width:270px;">{{item.smiles}}</td>
+                      <td style="max-width:200px;">{{item.smiles}}</td>
                       <td>{{item.mw}}</td>
                       <td>{{item.modulator_score}}</td>
                       <td>{{item.substrate_score}}</td>
@@ -123,7 +123,9 @@
         </div>
       </div>
     </div>
-
+    <a href="{{url_for('download')}}" role="button">
+      <i class="fas fa-save"></i> Save as PDF
+    </a>
     <p></p>
     </p>
 </body>
