@@ -104,8 +104,9 @@ def run():
                 fi.write(html)
             css = glob.glob("./static/css/*.css")
             options = {"enable-local-file-access": None}
+            config = pdfkit.configuration(wkhtmltopdf=bytes('/usr/local/bin/wkhtmltopdf', 'utf-8'))
             pdf = pdfkit.from_file(
-                "./report.html", "./report.pdf", css=css, options=options
+                "./report.html", "./report.pdf", css=css, options=options, configuration=config
             )
             return result
         except SyntaxError as e:
